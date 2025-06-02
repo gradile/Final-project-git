@@ -1,1 +1,1 @@
-This project takes information from a public API: http://api.openweathermap.org/data/2.5/weather, and displays the information about the weather in the given city. You can choose the display in Celsius or Farenheit degrees. 
+This project takes information from a public API: http://api.openweathermap.org/data/2.5/weather, and displays the weather in the given city. You can choose the display in Celsius or Farenheit degrees. 
