@@ -1,0 +1,6 @@
+Weather in Glendale:
+Temperature: 26.43°C
+Feels like: 26.43°C
+Description: broken clouds
+Humidity: 57%
+Wind Speed: 2.24 m/s
