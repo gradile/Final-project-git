@@ -62,7 +62,8 @@ def index():
                 'temperature': f"{data['main']['temp']}{unit_symbol}",
                 'feels_like': f"{data['main']['feels_like']}{unit_symbol}",
                 'description': data['weather'][0]['description'],
-                'description': description.title(),
+                'description_icon': data['weather'][0]['icon'],
+                'description_class': icon_class,
                 'humidity': f"{data['main']['humidity']}%",
                 'wind_speed': f"{data['wind']['speed']} m/s",
                 'icon': icon_class
