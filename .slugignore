@@ -1,8 +1,49 @@
-*.ipynb
-*.csv
-*.zip
-*.mp4
-*.png
-__pycache__/
+# Ignore Git files
+.git
+.gitignore
+
+# Ignore documentation
+README.md
+CHANGELOG.md
+LICENSE
+docs/
+
+# Ignore tests and test configs
 tests/
-notebooks/
+test/
+__tests__/
+coverage/
+*.spec.js
+*.test.js
+
+# Ignore local tools, logs, and temporary files
+*.log
+*.tmp
+tmp/
+.cache/
+.vscode/
+.idea/
+*.swp
+*.bak
+
+# Ignore frontend dev assets (if using Webpack/Vite/Gulp)
+node_modules/
+webpack.config.js
+vite.config.js
+gulpfile.js
+*.map
+
+# Python-specific ignores
+*.pyc
+*.pyo
+__pycache__/
+venv/
+.env
+
+# Compiled or backup files
+*.class
+*.o
+*.so
+*.exe
+*.dll
+*.old
