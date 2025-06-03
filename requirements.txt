@@ -5,5 +5,3 @@ pandas==2.2.3
 scikit-learn==1.6.1
 scipy==1.13.1
 scikit-learn-intelex==2024.1.0
-scikit-learn-extra==0.3.0
-scikit-learn-pandas==0.3.0
