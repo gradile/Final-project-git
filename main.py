@@ -54,14 +54,14 @@ def index():
             response.raise_for_status()
             data = response.json()
 
-            # description = data['weather'][0]['description']
+            description = data['weather'][0]['description']
             icon_class = WEATHER_ICON_MAP.get(description.lower(), "wi-na") 
 
             weather = {
                 'city': data['name'],
                 'temperature': f"{data['main']['temp']}{unit_symbol}",
                 'feels_like': f"{data['main']['feels_like']}{unit_symbol}",
-                'description': data['weather'][0]['description'],
+                'description': description.title(),
                 'description_icon': data['weather'][0]['icon'],
                 'description_class': icon_class,
                 'humidity': f"{data['main']['humidity']}%",
