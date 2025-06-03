@@ -6,8 +6,34 @@ app = Flask(__name__)
 API_KEY = 'b842877a99171f6d11bfc64a15bf0c1b'
 BASE_URL = "http://api.openweathermap.org/data/2.5/weather"
 
+WEATHER_ICON_MAP = {
+    "clear sky": "wi-day-sunny",
+    "few clouds": "wi-day-cloudy",
+    "scattered clouds": "wi-cloud",
+    "broken clouds": "wi-cloudy",
+    "shower rain": "wi-showers",
+    "rain": "wi-rain",
+    "thunderstorm": "wi-thunderstorm",
+    "snow": "wi-snow",
+    "mist": "wi-fog"
+}
+
 @app.route('/', methods=['GET', 'POST'])
 def index():
+
+#     WEATHER_ICON_MAP = {
+#     "clear sky": "wi-day-sunny",
+#     "few clouds": "wi-day-cloudy",
+#     "scattered clouds": "wi-cloud",
+#     "broken clouds": "wi-cloudy",
+#     "shower rain": "wi-showers",
+#     "rain": "wi-rain",
+#     "thunderstorm": "wi-thunderstorm",
+#     "snow": "wi-snow",
+#     "mist": "wi-fog"
+# }
+
+
     weather = None
     error = None
 
@@ -28,14 +54,18 @@ def index():
             response.raise_for_status()
             data = response.json()
 
+            # description = data['weather'][0]['description']
+            icon_class = WEATHER_ICON_MAP.get(description.lower(), "wi-na") 
+
             weather = {
                 'city': data['name'],
                 'temperature': f"{data['main']['temp']}{unit_symbol}",
                 'feels_like': f"{data['main']['feels_like']}{unit_symbol}",
                 'description': data['weather'][0]['description'],
+                'description': description.title(),
                 'humidity': f"{data['main']['humidity']}%",
                 'wind_speed': f"{data['wind']['speed']} m/s",
-                'icon': f"http://openweathermap.org/img/wn/{data['weather'][0]['icon']}@2x.png"
+                'icon': icon_class
             }
 
         except requests.exceptions.HTTPError:
