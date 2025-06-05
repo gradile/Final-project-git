@@ -14,5 +14,3 @@ Weather Checker is a simple Python application that fetches real-time weather da
 - Python 3.x
 - `requests` library
 - Flask
-
-
